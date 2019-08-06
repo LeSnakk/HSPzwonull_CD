@@ -1,3 +1,9 @@
-<p>
-  overview-kurse works!
-</p>
+<h1>{{ kategorieData[0].title }}</h1>
+<p [innerHTML]="kategorieData[0].body"></p>
+
+<h2>Termine</h2>
+<div *ngFor="let courses of kategorieData" style="margin-bottom: 25px;">
+  Name: {{courses.title}}
+  <br>
+  NID: {{courses.nid}}
+</div>

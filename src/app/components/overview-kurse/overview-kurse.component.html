@@ -1,9 +1,17 @@
-<h1>{{ kategorieData[0].title }}</h1>
-<p [innerHTML]="kategorieData[0].body"></p>
+<!--<h1>{{ kategorieData[0].title }}</h1>
+<p [innerHTML]="kategorieData[0].body"></p>-->
 
-<h2>Termine</h2>
+<h2>Verfügbare Sportarten</h2>
+<br>
 <div *ngFor="let courses of kategorieData" style="margin-bottom: 25px;">
-  Name: {{courses.title}}
+  <h4>{{courses.title}}</h4>
+  ID: {{courses.nid}}
   <br>
-  NID: {{courses.nid}}
+  <a routerLink="/detail-kurs/{{ courses.nid }}">Link zum Kurs</a>
 </div>
+
+<!--<h3>{{ course.title }}</h3>
+ID: {{ course.nid }}
+
+<a routerLink="/detail-kurs/{{ course.nid }}">Link zum Topkurs</a>
+<p [innerHTML]="course.body"></p>-->

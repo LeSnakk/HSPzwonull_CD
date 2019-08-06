@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
+import {HttpClient} from '@angular/common/http';
 
 @Component({
   selector: 'app-overview-kurseamwochentag',
@@ -7,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OverviewKurseamwochentagComponent implements OnInit {
 
-  constructor() { }
 
-  ngOnInit() {
+  public weekdayID;
+  public weekdayData;
+
+
+  constructor(private route: ActivatedRoute, private http: HttpClient) {
   }
 
+  ngOnInit() {
+
+    this.weekdayID = this.route.snapshot.paramMap.get('id');
+
+
+    this.http.get('https://hochschulsport-koeln.de/json/coursesbyweekday/' + this.weekdayID + '/?_format=json')
+      .subscribe((data) => {
+        this.weekdayData = data;
+      });
+  }
 }

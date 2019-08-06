@@ -1,3 +1,8 @@
-<p>
-  overview-kurseamwochentag works!
-</p>
+<h2>Verfügbare Kurse</h2>
+<br>
+<div *ngFor="let courses of weekdayData" style="margin-bottom: 25px;">
+  <h4>{{courses.field_kursverknuepfung}}</h4>
+  ID: {{courses.nid}}
+  <br>
+  <a routerLink="/detail-kurs/{{ courses.nid }}">Link zum Kurs</a>
+</div>

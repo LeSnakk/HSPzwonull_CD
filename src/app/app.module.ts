@@ -1,5 +1,6 @@
 import {BrowserModule} from '@angular/platform-browser';
-import {NgModule} from '@angular/core';
+import {NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
+
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
@@ -13,6 +14,7 @@ import {OverviewWeekComponent} from './components/overview-week/overview-week.co
 import {OverviewKurseamwochentagComponent} from './components/overview-kurseamwochentag/overview-kurseamwochentag.component';
 import {HomeComponent} from './components/home/home.component';
 import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
+import {MDBBootstrapModule } from 'angular-bootstrap-md';
 
 @NgModule({
   declarations: [
@@ -28,10 +30,12 @@ import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
   ],
   imports: [
     BrowserModule,
+    MDBBootstrapModule.forRoot(),
     AppRoutingModule,
     HttpClientModule,
     NgbModule
   ],
+  schemas: [ NO_ERRORS_SCHEMA ],
   providers: [],
   bootstrap: [AppComponent]
 })

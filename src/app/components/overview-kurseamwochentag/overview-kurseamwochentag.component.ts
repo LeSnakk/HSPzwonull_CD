@@ -13,7 +13,6 @@ export class OverviewKurseamwochentagComponent implements OnInit {
   public weekdayID;
   public weekdayData;
 
-
   constructor(private route: ActivatedRoute, private http: HttpClient) {
   }
 

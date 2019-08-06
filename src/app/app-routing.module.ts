@@ -1,8 +1,8 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
-import {OverviewKategoriesComponent} from "./components/overview-kategories/overview-kategories.component";
-import {HomeComponent} from "./components/home/home.component";
-import {DetailKursComponent} from "./components/detail-kurs/detail-kurs.component";
+import {OverviewKategoriesComponent} from './components/overview-kategories/overview-kategories.component';
+import {HomeComponent} from './components/home/home.component';
+import {DetailKursComponent} from './components/detail-kurs/detail-kurs.component';
 import {OverviewKurseComponent} from './components/overview-kurse/overview-kurse.component';
 import {DetailNewsComponent} from './components/detail-news/detail-news.component';
 import {OverviewWeekComponent} from './components/overview-week/overview-week.component';

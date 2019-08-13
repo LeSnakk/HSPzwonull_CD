@@ -27,6 +27,7 @@ import {MDBBootstrapModule } from 'angular-bootstrap-md';
     OverviewWeekComponent,
     OverviewKurseamwochentagComponent,
     HomeComponent
+
   ],
   imports: [
     BrowserModule,

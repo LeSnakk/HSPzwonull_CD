@@ -15,4 +15,8 @@
   Zeitraum: {{ courseDate.field_uhrzeit_beginn }} - {{ courseDate.field_uhrzeit_ende }}
   <br>
   Ort: {{courseDate.field_ort}}
+  <br>
+  <button (click)="anmelden()">Anmelden</button>
+  <button (click)="abmelden()">Abmelden</button>
+  {{anmeldungen}}
 </div>

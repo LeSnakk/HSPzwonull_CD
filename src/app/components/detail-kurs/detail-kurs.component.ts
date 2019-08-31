@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {HttpClient} from '@angular/common/http';
+import {AnmeldungenService} from '../../anmeldungen.service';
 
-let anmeldungen;
+
 
 @Component({
   selector: 'app-detail-kurs',
@@ -10,25 +11,23 @@ let anmeldungen;
   styleUrls: ['./detail-kurs.component.scss']
 })
 
-
 export class DetailKursComponent implements OnInit {
 
   public courseID;
   public courseData;
   public anmeldungen;
+  public title;
 
 
 
-  constructor(private route: ActivatedRoute, private http: HttpClient) { }
+  constructor(private route: ActivatedRoute, private http: HttpClient, private anmeldungenService: AnmeldungenService) { }
 
   anmelden() {
-    anmeldungen = this.courseID;
-    this.anmeldungen = anmeldungen;
-    localStorage.setItem('angemeldet', JSON.stringify({ID: this.courseID, Name: this.courseData[0].title}));
-    console.log(JSON.parse(localStorage.getItem('angemeldet')));
+    this.anmeldungenService.tempKursName = this.courseData[0].title;
+    this.anmeldungenService.setAnmeldungen();
   }
   abmelden() {
-  localStorage.removeItem('angemeldet');
+  localStorage.removeItem('liste');
   }
 
   ngOnInit() {

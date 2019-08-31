@@ -15,6 +15,7 @@ import {OverviewKurseamwochentagComponent} from './components/overview-kurseamwo
 import {HomeComponent} from './components/home/home.component';
 import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
 import {MDBBootstrapModule } from 'angular-bootstrap-md';
+import { AnmeldungslisteComponent } from './components/anmeldungsliste/anmeldungsliste.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import {MDBBootstrapModule } from 'angular-bootstrap-md';
     OverviewKurseComponent,
     OverviewWeekComponent,
     OverviewKurseamwochentagComponent,
-    HomeComponent
+    HomeComponent,
+    AnmeldungslisteComponent
 
   ],
   imports: [

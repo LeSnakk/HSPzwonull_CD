@@ -7,6 +7,7 @@ import {OverviewKurseComponent} from './components/overview-kurse/overview-kurse
 import {DetailNewsComponent} from './components/detail-news/detail-news.component';
 import {OverviewWeekComponent} from './components/overview-week/overview-week.component';
 import {OverviewKurseamwochentagComponent} from './components/overview-kurseamwochentag/overview-kurseamwochentag.component';
+import {AnmeldungslisteComponent} from './components/anmeldungsliste/anmeldungsliste.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -17,7 +18,8 @@ const routes: Routes = [
   {path: 'detail-news/:id', component: DetailNewsComponent},
   {path: 'overview-kurse/:id', component: OverviewKurseComponent},
   {path: 'overview-week/:id', component: OverviewWeekComponent},
-  {path: 'overview-kurseamwochentag/:id', component: OverviewKurseamwochentagComponent}
+  {path: 'overview-kurseamwochentag/:id', component: OverviewKurseamwochentagComponent},
+  {path: 'anmeldungsliste', component: AnmeldungslisteComponent}
 
 ];
 

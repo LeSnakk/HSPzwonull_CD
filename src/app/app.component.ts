@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {AnmeldungenService} from './anmeldungen.service';
 
 @Component({
   selector: 'app-root',

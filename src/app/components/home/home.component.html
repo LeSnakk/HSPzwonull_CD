@@ -1,5 +1,5 @@
 <h2>Angemeldete Kurstermine</h2>
-{{anmeldungen}}
+<app-anmeldungsliste></app-anmeldungsliste>
 <br>
 <h2>News</h2>
 <div *ngIf="news.length == 0">
@@ -10,6 +10,7 @@
     <h4>{{ newsentry.title }} </h4>
     <p [innerHTML]="newsentry.body"></p>
     <a routerLink="/detail-news/{{ newsentry.nid }}">Link zur News</a>
+    <br><br>
   </div>
 </div>
 

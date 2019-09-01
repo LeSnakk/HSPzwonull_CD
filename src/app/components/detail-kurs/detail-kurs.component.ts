@@ -24,8 +24,13 @@ export class DetailKursComponent implements OnInit {
 
   anmelden() {
     this.anmeldungenService.tempKursName = this.courseData[0].title;
-    this.anmeldungenService.setAnmeldungen();
+    this.anmeldungenService.tempKursID = this.courseID;
+    if ((JSON.stringify(this.anmeldungenService.temp1)).indexOf(this.courseData[0].title) === -1) {
+      this.anmeldungenService.setAnmeldungen();
+    }
   }
+
+
   abmelden() {
   localStorage.removeItem('liste');
   }

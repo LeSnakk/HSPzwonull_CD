@@ -7,6 +7,7 @@ import { Injectable } from '@angular/core';
 export class AnmeldungenService {
 
   public tempKursName;
+  public tempKursID;
   public temp1 = [];
   public temp2;
 
@@ -15,8 +16,8 @@ export class AnmeldungenService {
 
 
   setAnmeldungen() {
-    localStorage.setItem('liste', JSON.stringify({Name: this.tempKursName}));
-    this.temp1.push({Name: this.tempKursName});
+    localStorage.setItem('liste', JSON.stringify({Name: this.tempKursName, ID: this.tempKursID}));
+    this.temp1.push({Name: this.tempKursName, ID: this.tempKursID});
     console.log (this.temp1);
     localStorage.setItem('liste', JSON.stringify(this.temp1));
   }

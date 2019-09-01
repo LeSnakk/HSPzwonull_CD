@@ -1,6 +1,7 @@
 <h2>Test</h2>
 <ul *ngFor='let anmeldung of anmeldungen | keyvalue'>
       <div *ngFor='let obj of anmeldung.value'>
-        <li>{{ obj.Name }}</li>
+        <li>{{ obj.Name }} </li>
+        <a routerLink="/detail-kurs/{{ obj.ID }}">Link zum Kurs</a>
   </div>
 </ul>

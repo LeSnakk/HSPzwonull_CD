@@ -16,7 +16,7 @@
   <br>
   Ort: {{courseDate.field_ort}}
   <br>
-  <button (click)="anmelden()">Anmelden</button>
+  <button (click)="anmelden($event, courseDate.field_uhrzeit_beginn, courseDate.field_uhrzeit_ende ,courseDate.field_ort)">Anmelden</button>
   <button (click)="abmelden()">Abmelden</button>
   {{anmeldungen}}
 </div>

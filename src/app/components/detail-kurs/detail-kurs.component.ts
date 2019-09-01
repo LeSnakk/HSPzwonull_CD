@@ -15,6 +15,7 @@ export class DetailKursComponent implements OnInit {
 
   public courseID;
   public courseData;
+
   public anmeldungen;
   public title;
 
@@ -22,10 +23,14 @@ export class DetailKursComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private http: HttpClient, private anmeldungenService: AnmeldungenService) { }
 
-  anmelden() {
+  anmelden(event, Startzeit, Endzeit, Ort) {
     this.anmeldungenService.tempKursName = this.courseData[0].title;
     this.anmeldungenService.tempKursID = this.courseID;
-    if ((JSON.stringify(this.anmeldungenService.temp1)).indexOf(this.courseData[0].title) === -1) {
+    this.anmeldungenService.tempKursStart = Startzeit;
+    this.anmeldungenService.tempKursEnde = Endzeit;
+    this.anmeldungenService.tempKursOrt = Ort
+    console.log(JSON.stringify(this.anmeldungenService.temp1));
+    if ((JSON.stringify(this.anmeldungenService.temp1)).indexOf('"Name":"' + this.courseData[0].title + '","ID":"' + this.courseID + '","Start":"' + Startzeit + '","Ende":"' + Endzeit + '","Ort":"' + Ort + '"') === -1) {
       this.anmeldungenService.setAnmeldungen();
     }
   }

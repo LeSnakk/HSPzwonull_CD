@@ -8,6 +8,9 @@ export class AnmeldungenService {
 
   public tempKursName;
   public tempKursID;
+  public tempKursStart;
+  public tempKursEnde;
+  public tempKursOrt;
   public temp1 = [];
   public temp2;
 
@@ -16,8 +19,7 @@ export class AnmeldungenService {
 
 
   setAnmeldungen() {
-    localStorage.setItem('liste', JSON.stringify({Name: this.tempKursName, ID: this.tempKursID}));
-    this.temp1.push({Name: this.tempKursName, ID: this.tempKursID});
+    this.temp1.push({Name: this.tempKursName, ID: this.tempKursID, Start: this.tempKursStart, Ende: this.tempKursEnde, Ort: this.tempKursOrt});
     console.log (this.temp1);
     localStorage.setItem('liste', JSON.stringify(this.temp1));
   }

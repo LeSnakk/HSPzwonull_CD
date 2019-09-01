@@ -1,7 +1,11 @@
-<h2>Test</h2>
+
 <ul *ngFor='let anmeldung of anmeldungen | keyvalue'>
       <div *ngFor='let obj of anmeldung.value'>
-        <li>{{ obj.Name }} </li>
-        <a routerLink="/detail-kurs/{{ obj.ID }}">Link zum Kurs</a>
+        <li><b>{{ obj.Name }}: </b>{{obj.Start}} bis {{obj.Ende}}</li>
+        <ul>
+        <li>Ort: {{obj.Ort}}</li>
+        <li><a routerLink="/detail-kurs/{{ obj.ID }}">Link zum Kurs und zur An- und Abmeldung</a></li>
+        </ul>
+        <br>
   </div>
 </ul>

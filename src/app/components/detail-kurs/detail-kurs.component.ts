@@ -23,21 +23,39 @@ export class DetailKursComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private http: HttpClient, private anmeldungenService: AnmeldungenService) { }
 
-  anmelden(event, Startzeit, Endzeit, Ort) {
+  anmelden(event, Tag, Startzeit, Endzeit, Ort) {
     this.anmeldungenService.tempKursName = this.courseData[0].title;
     this.anmeldungenService.tempKursID = this.courseID;
+    this.anmeldungenService.tempKursTag = Tag;
     this.anmeldungenService.tempKursStart = Startzeit;
     this.anmeldungenService.tempKursEnde = Endzeit;
     this.anmeldungenService.tempKursOrt = Ort
     console.log(JSON.stringify(this.anmeldungenService.temp1));
-    if ((JSON.stringify(this.anmeldungenService.temp1)).indexOf('"Name":"' + this.courseData[0].title + '","ID":"' + this.courseID + '","Start":"' + Startzeit + '","Ende":"' + Endzeit + '","Ort":"' + Ort + '"') === -1) {
+    if (((localStorage.getItem('liste')) === null) || ((localStorage.getItem('liste')).indexOf('"Name":"' + this.courseData[0].title + '","ID":"' + this.courseID + '","Tag":"' + Tag + '","Start":"' + Startzeit + '","Ende":"' + Endzeit + '","Ort":"' + Ort + '"') === -1)) {
       this.anmeldungenService.setAnmeldungen();
+      window.location.reload();
     }
+
   }
 
 
-  abmelden() {
+  /*abmelden() {
   localStorage.removeItem('liste');
+  }*/
+
+  abmelden(event, Tag, Startzeit, Endzeit, Ort) {
+    this.anmeldungenService.tempKursName = this.courseData[0].title;
+    this.anmeldungenService.tempKursID = this.courseID;
+    this.anmeldungenService.tempKursTag = Tag;
+    this.anmeldungenService.tempKursStart = Startzeit;
+    this.anmeldungenService.tempKursEnde = Endzeit;
+    this.anmeldungenService.tempKursOrt = Ort
+    console.log(JSON.stringify(this.anmeldungenService.temp1));
+    if (((localStorage.getItem('liste')) !== null) && ((localStorage.getItem('liste')).indexOf('"Name":"' + this.courseData[0].title + '","ID":"' + this.courseID + '","Tag":"' + Tag + '","Start":"' + Startzeit + '","Ende":"' + Endzeit + '","Ort":"' + Ort + '"') !== -1)) {
+      this.anmeldungenService.removeAnmeldungen();
+
+    }
+
   }
 
   ngOnInit() {

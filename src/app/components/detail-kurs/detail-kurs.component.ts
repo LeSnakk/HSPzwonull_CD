@@ -13,8 +13,10 @@ import {AnmeldungenService} from '../../anmeldungen.service';
 
 export class DetailKursComponent implements OnInit {
 
+  console = console;
   public courseID;
   public courseData;
+  public data;
 
   public anmeldungen;
   public title;
@@ -33,9 +35,9 @@ export class DetailKursComponent implements OnInit {
     console.log(JSON.stringify(this.anmeldungenService.temp1));
     if (((localStorage.getItem('liste')) === null) || ((localStorage.getItem('liste')).indexOf('"Name":"' + this.courseData[0].title + '","ID":"' + this.courseID + '","Tag":"' + Tag + '","Start":"' + Startzeit + '","Ende":"' + Endzeit + '","Ort":"' + Ort + '"') === -1)) {
       this.anmeldungenService.setAnmeldungen();
+      alert('Zu Kurs angemeldet');
       window.location.reload();
     }
-
   }
 
 
@@ -53,7 +55,8 @@ export class DetailKursComponent implements OnInit {
     console.log(JSON.stringify(this.anmeldungenService.temp1));
     if (((localStorage.getItem('liste')) !== null) && ((localStorage.getItem('liste')).indexOf('"Name":"' + this.courseData[0].title + '","ID":"' + this.courseID + '","Tag":"' + Tag + '","Start":"' + Startzeit + '","Ende":"' + Endzeit + '","Ort":"' + Ort + '"') !== -1)) {
       this.anmeldungenService.removeAnmeldungen();
-
+      alert('Von Kurs abgemeldet');
+      window.location.reload();
     }
 
   }
@@ -66,6 +69,7 @@ export class DetailKursComponent implements OnInit {
       .subscribe((data) => {
         this.courseData = data;
       });
+    this.data = localStorage.getItem('liste');
   }
 
 }

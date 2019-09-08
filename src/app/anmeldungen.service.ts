@@ -23,7 +23,6 @@ export class AnmeldungenService {
   setAnmeldungen() {
     this.temp1 = JSON.parse(localStorage.getItem('liste')) || [];
     this.temp1.push({Name: this.tempKursName, ID: this.tempKursID, Tag: this.tempKursTag, Start: this.tempKursStart, Ende: this.tempKursEnde, Ort: this.tempKursOrt});
-    console.log (this.temp1);
     localStorage.setItem('liste', JSON.stringify(this.temp1));
   }
 
@@ -31,49 +30,33 @@ export class AnmeldungenService {
     this.temp2 = ({Name: this.tempKursName, ID: this.tempKursID, Tag: this.tempKursTag, Start: this.tempKursStart, Ende: this.tempKursEnde, Ort: this.tempKursOrt});
     localStorage.setItem('loeschliste', JSON.stringify(this.temp2));
 
-    const a = JSON.stringify(this.temp2);
-    console.log('A' + this.temp2);
-    console.log('B' + JSON.stringify(localStorage.getItem('liste')));
+    const angemeldet1 = localStorage.getItem('liste');
+    const loeschauswahl1 = localStorage.getItem('loeschliste');
+    const zuloeschen1 = loeschauswahl1 + ','
+    const neueliste1 = angemeldet1.replace(zuloeschen1, '');
+    localStorage.setItem('liste', neueliste1);
 
-    const arr = localStorage.getItem('liste');
-    console.log('vorher' + arr);
-    const losch2 = localStorage.getItem('loeschliste');
-    const losch = losch2 + ','
-    console.log(losch);
-    const index = arr.replace(losch, '');
-    console.log('nachher' + index);
-    localStorage.setItem('liste', index);
+    const angemeldet2 = localStorage.getItem('liste');
+    const loeschauswahl2 = localStorage.getItem('loeschliste');
+    const zuloeschen2 = ',' + loeschauswahl2;
+    const neueliste2 = angemeldet2.replace(zuloeschen2, '');
+    localStorage.setItem('liste', neueliste2);
 
-    const arr9 = localStorage.getItem('liste');
-    console.log('vorher' + arr9);
-    const losch8 = localStorage.getItem('loeschliste');
-    const losch7 = ',' + losch8;
-    console.log(losch7);
-    const index4 = arr9.replace(losch7, '');
-    console.log('nachher' + index4);
-    localStorage.setItem('liste', index4);
+    const angemeldet3 = localStorage.getItem('liste');
+    const loeschauswahl3 = localStorage.getItem('loeschliste');
+    const zuloeschen3 = ',\n' + loeschauswahl3;
+    const neueliste3 = angemeldet3.replace(zuloeschen3, '');
+    localStorage.setItem('liste', neueliste3);
 
-    const arr3 = localStorage.getItem('liste');
-    console.log('vorher' + arr3);
-    const losch5 = localStorage.getItem('loeschliste');
-    const losch4 = ',\n' + losch5;
-    console.log(losch4);
-    const index3 = arr3.replace(losch4, '');
-    console.log('nachher' + index3);
-    localStorage.setItem('liste', index3);
-
-    const arr2 = localStorage.getItem('liste');
-    const losch3 = localStorage.getItem('loeschliste');
-    const losch1 = losch3;
-    console.log(losch1);
-    const index2 = arr2.replace(losch1, '');
-    console.log('nachher' + index2);
-    localStorage.setItem('liste', index2);
+    const angemeldet4 = localStorage.getItem('liste');
+    const loeschauswahl4 = localStorage.getItem('loeschliste');
+    const zuloeschen4 = loeschauswahl4;
+    const neueliste4 = angemeldet4.replace(zuloeschen4, '');
+    localStorage.setItem('liste', neueliste4);
 
   }
 
   getAnmeldungen() {
-    /*console.log('anmeldungenservice' +  this.tempKursName);*/
     return [
       JSON.parse(localStorage.getItem('liste'))
     ];

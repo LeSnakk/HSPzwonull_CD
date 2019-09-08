@@ -1,15 +1,16 @@
+<div *ngIf="anmeldungen[0].length == 0">
+  <i>Aktuell bist du zu keinen Kursen angemeldet.</i>
+</div>
+
+<div *ngIf="anmeldungen[0].length != 0">
 <ul *ngFor='let anmeldung of anmeldungen | keyvalue'>
       <div *ngFor='let obj of anmeldung.value'>
-        <!--<div *ngIf="((anmeldung.value).length == 0)">
-          <b><i>Du bist aktuell zu keinem Kurs angemeldet.</i></b>
-
-        <div *ngIf="((anmeldung.value).length > 0)">        </div>-->
         <li><b>{{ obj.Name }}: </b> {{obj.Tag}}s von {{obj.Start}} bis {{obj.Ende}}</li>
         <ul>
         <li>Ort: {{obj.Ort}}</li>
         <li><a routerLink="/detail-kurs/{{ obj.ID }}">Link zum Kurs und zur An- und Abmeldung</a></li>
         </ul>
         <br>
-        <!---</div>-->
   </div>
 </ul>
+</div>

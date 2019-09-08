@@ -9,7 +9,7 @@ import {AnmeldungenService} from '../../anmeldungen.service';
 export class AnmeldungslisteComponent implements OnInit {
 
   public anmeldungen = [];
-
+  console = console;
 
   constructor(private anmeldungenService: AnmeldungenService) { }
 

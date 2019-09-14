@@ -1,0 +1,56 @@
+.navigationsleiste {
+  z-index: 100 !important;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
+.menubutton1 {
+  border-radius: 5px;
+  margin: 2em;
+  margin-left: 7em;
+}
+.menubutton {
+  border-radius: 5px;
+  margin: 2em;
+}
+
+.menubutton:hover, .menubutton1:hover{
+  background-color: darkblue;
+}
+
+.inhalt {
+  max-width: 85%;
+  margin: auto;
+  background: white;
+}
+
+.seperator {
+  border-left: 2px solid red;
+  margin-left: 25px;
+  margin-right: 45px;
+  box-shadow: 0px 0px 5px grey;
+}
+
+.content {
+  width: 60%;
+}
+
+ #ueberschrift {
+   text-align: center;
+
+ }
+
+ .links {
+   width: 27%;
+ }
+
+ #main-navigation {
+   width: 100%;
+   clear: both;
+   position: -webkit-sticky;
+   position: sticky;
+   top: 0;
+ }
+
+

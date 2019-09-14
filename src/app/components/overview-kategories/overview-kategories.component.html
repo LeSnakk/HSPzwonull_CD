@@ -1,8 +1,9 @@
 <br>
 <div *ngIf="kategories.length > 0">
   <h2>Kategorien</h2>
+  <hr>
   <div *ngFor="let course of kategories">
-    <a routerLink="/overview-kurse/{{ course.nid }}">{{course.title}}</a>
+    <a mat-stroked-button routerLink="/overview-kurse/{{ course.nid }}">{{course.title}}</a>
     <p [innerHTML]="course.body"></p>
   </div>
 </div>

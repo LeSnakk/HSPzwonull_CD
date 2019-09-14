@@ -5,12 +5,15 @@
 <div *ngIf="courseData[0].body.length > 0">
   <br>
   <h1>{{ courseData[0].title }}</h1>
+  <hr>
   <p [innerHTML]="courseData[0].body"></p>
 </div>
 
 
 <div *ngIf="courseData.length != 0">
-<h2>Termine:</h2>
+  <hr>
+<h2>Termine</h2>
+  <hr>
 <div *ngFor="let courseDate of courseData" style="margin-bottom: 25px;">
   Wochentag: {{ courseDate.field_wochentag }}
   <br>
@@ -19,10 +22,10 @@
   Ort: {{courseDate.field_ort}}
   <br>
   <div *ngIf="(data === null) || (data.indexOf('&#34;Name&#34;:&#34;' + courseData[0].title + '&#34;,&#34;ID&#34;:&#34;' + courseData[0].nid + '&#34;,&#34;Tag&#34;:&#34;' + courseDate.field_wochentag + '&#34;,&#34;Start&#34;:&#34;' + courseDate.field_uhrzeit_beginn + '&#34;,&#34;Ende&#34;:&#34;' + courseDate.field_uhrzeit_ende + '&#34;,&#34;Ort&#34;:&#34;' + courseDate.field_ort + '&#34;') === -1)">
-  <button (click)="anmelden($event, courseDate.field_wochentag, courseDate.field_uhrzeit_beginn, courseDate.field_uhrzeit_ende, courseDate.field_ort)">Anmelden</button>
+  <button mat-raised-button matTooltip="Zu diesem Kurs anmelden" matTooltipPosition="after" color="primary" (click)="anmelden($event, courseDate.field_wochentag, courseDate.field_uhrzeit_beginn, courseDate.field_uhrzeit_ende, courseDate.field_ort)">Anmelden</button>
   </div>
   <div *ngIf="(data !== null) && (data.indexOf('&#34;Name&#34;:&#34;' + courseData[0].title + '&#34;,&#34;ID&#34;:&#34;' + courseData[0].nid + '&#34;,&#34;Tag&#34;:&#34;' + courseDate.field_wochentag + '&#34;,&#34;Start&#34;:&#34;' + courseDate.field_uhrzeit_beginn + '&#34;,&#34;Ende&#34;:&#34;' + courseDate.field_uhrzeit_ende + '&#34;,&#34;Ort&#34;:&#34;' + courseDate.field_ort + '&#34;') !== -1)">
-    <button (click)="abmelden($event, courseDate.field_wochentag, courseDate.field_uhrzeit_beginn, courseDate.field_uhrzeit_ende, courseDate.field_ort)">Abmelden</button>
+    <button mat-raised-button matTooltip="Von diesem Kurs abmelden" matTooltipPosition="after" color ="warn" (click)="abmelden($event, courseDate.field_wochentag, courseDate.field_uhrzeit_beginn, courseDate.field_uhrzeit_ende, courseDate.field_ort)">Abmelden</button>
   </div>
     {{anmeldungen}}
 </div>

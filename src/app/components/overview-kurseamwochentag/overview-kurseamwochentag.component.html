@@ -1,5 +1,6 @@
 <br>
 <h2>Verfügbare Kurse</h2>
+<hr>
 <br>
 <div *ngFor="let courses of weekdayData" style="margin-bottom: 25px;">
   <h4>{{courses.field_kursverknuepfung}}</h4>
@@ -7,5 +8,5 @@
   <br>
   Zeitpunkt: {{courses.field_uhrzeit_beginn}} bis {{courses.field_uhrzeit_ende}}
   <br>
-  <a routerLink="/detail-kurs/{{ courses.nid }}">Link zum Kurs</a>
+  <a mat-stroked-button routerLink="/detail-kurs/{{ courses.nid }}">Link zum Kurs</a>
 </div>

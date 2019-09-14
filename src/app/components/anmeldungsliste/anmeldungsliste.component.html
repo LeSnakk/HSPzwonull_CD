@@ -1,16 +1,23 @@
 <div *ngIf="anmeldungen[0].length == 0">
-  <i>Aktuell bist du zu keinen Kursen angemeldet.</i>
+  <i>&nbsp;&nbsp;&nbsp;&nbsp;Aktuell bist Du zu keinem Kurs angemeldet.<br><br></i>
 </div>
 
+
 <div *ngIf="anmeldungen[0].length != 0">
+
+
 <ul *ngFor='let anmeldung of anmeldungen | keyvalue'>
       <div *ngFor='let obj of anmeldung.value'>
-        <li><b>{{ obj.Name }}: </b> {{obj.Tag}}s von {{obj.Start}} bis {{obj.Ende}}</li>
+        <li><b>{{ obj.Name }}: </b> {{obj.Tag}}s von {{obj.Start}} Uhr bis {{obj.Ende}} Uhr</li>
         <ul>
-        <li>Ort: {{obj.Ort}}</li>
-        <li><a routerLink="/detail-kurs/{{ obj.ID }}">Link zum Kurs und zur An- und Abmeldung</a></li>
+        <li>Ort: {{obj.Ort}} <br>
+        </li>
         </ul>
-        <br>
+        <a mat-button routerLink="/detail-kurs/{{ obj.ID }}" (click)="refresh($event, obj.ID)">Link zum Kurs und zur An- und Abmeldung</a >
+        <br><br>
   </div>
 </ul>
+  <div *ngIf="anmeldungen[0].length >= 2">
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button mat-raised-button color="warn" matTooltip="Diese Aktion kann nicht rückgängig gemacht werden" (click)="clear()">Von allen Kursen abmelden</button><br><br><br>
+</div>
 </div>

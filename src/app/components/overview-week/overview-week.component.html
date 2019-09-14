@@ -1,8 +1,9 @@
 <br>
 <div *ngIf="weekdays.length > 0">
   <h2>Kurse nach Wochentag</h2>
+  <hr>
   <div *ngFor="let day of weekdays">
-    <a routerLink="/overview-kurseamwochentag/{{ day.nid }}">{{day.title}}</a>
+    <a mat-stroked-button routerLink="/overview-kurseamwochentag/{{ day.nid }}">{{day.title}}</a>
     <p [innerHTML]="day.body"></p>
   </div>
 </div>

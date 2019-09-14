@@ -1,8 +1,10 @@
 <br>
 <h2>Angemeldete Kurstermine</h2>
+<hr>
 <app-anmeldungsliste></app-anmeldungsliste>
-<br>
+<hr>
 <h2>News</h2>
+<hr>
 <div *ngIf="news.length == 0">
   Keine neuen Nachrichten vorhanden.
 </div>
@@ -10,13 +12,15 @@
   <div *ngFor="let newsentry of news">
     <h4>{{ newsentry.title }} </h4>
     <p [innerHTML]="newsentry.body"></p>
-    <a routerLink="/detail-news/{{ newsentry.nid }}">Weitere Informationen</a>
+    <a mat-button routerLink="/detail-news/{{ newsentry.nid }}">Weitere Informationen</a>
     <br><br>
   </div>
 </div>
 
 <br>
+<hr>
 <h2>Topkurse</h2>
+<hr>
 <div *ngIf="topcourses.length == 0">
   Aktuell gibt es leider keine Topkurse.
 </div>
@@ -25,7 +29,7 @@
     <h3>{{ course.title }}</h3>
     ID: {{ course.nid }}
 
-    <a routerLink="/detail-kurs/{{ course.nid }}">Weitere Informationen</a>
+    <a mat-button routerLink="/detail-kurs/{{ course.nid }}">Weitere Informationen</a>
     <p [innerHTML]="course.body"></p>
     <br>
   </div>

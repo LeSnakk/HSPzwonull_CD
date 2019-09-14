@@ -11,15 +11,21 @@ export class AnmeldungslisteComponent implements OnInit {
   public anmeldungen = [];
   console = console;
 
+
   constructor(private anmeldungenService: AnmeldungenService) { }
 
   ngOnInit() {
 
     this.anmeldungen = this.anmeldungenService.getAnmeldungen();
-    console.log(this.anmeldungen);
-
+  }
+  refresh(event, ID) {
+    location.href = '/detail-kurs/' + ID;
   }
 
+  clear() {
+    localStorage.removeItem('liste');
+    window.location.reload();
+  }
 }
 
 /*ngOnInit() {

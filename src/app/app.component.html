@@ -1,22 +1,31 @@
-<div class="container">
+<div class="navigationsleiste">
+<mat-toolbar color="warn" class="mat-elevation-z6">HSPzwonull_CD – Der Sportkursbrowser
+  <a button class="mat-elevation-z6" class ="menubutton1" mat-flat-button routerLink="/home">Homepage</a>  <br><br>
+  <a button class="mat-elevation-z6" class ="menubutton" mat-flat-button routerLink="/overview-categories">Übersichtsseite Kategorien</a> <br><br>
+  <a button class="mat-elevation-z6" class ="menubutton" mat-flat-button routerLink="/overview-week">Übersichtsseite Wochentage</a> <br><br>
+  <a button class="mat-elevation-z6" class ="menubutton" mat-flat-button routerLink="/impressum">Impressum</a> <br><br></mat-toolbar>
+</div>
+<div class="inhalt">
+
+
+<div class="container" class="mat-elevation-z6">
 
   <div class="row">
-    <div class="col-3">
+    <div class="links">
     <nav id="main-navigation"> <br>
-      <a routerLink="/home">Homepage</a>  <br><br>
-      <a routerLink="/overview-categories">Übersichtsseite Kategorien</a> <br><br>
-      <a routerLink="/overview-week">Übersichtsseite Wochentage</a> <br><br>
+      <div id="ueberschrift">
+      <b><h2>Angemeldete Kurse</h2></b><br>
+      </div>
+      <app-anmeldungsliste ></app-anmeldungsliste>
+
     </nav>
     </div>
-
-    <div class="col-9">
+<div class="seperator" ></div>
+    <div class="content">
       <router-outlet></router-outlet>
-      <!--
-        "Inhalte" der Komponente werden über das router-outlet in die Anwendung gerendert.
-        <router-outlet> wird ersetzt durch den Inhalt der aktiven Komponente.
-       -->
+
+      <hr>
     </div>
-
   </div>
-
+</div>
 </div>

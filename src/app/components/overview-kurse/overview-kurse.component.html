@@ -1,9 +1,10 @@
 <br>
 <h2>Verfügbare Kurse</h2>
+<hr>
 <br>
 <div *ngFor="let courses of kategorieData" style="margin-bottom: 25px;">
   <h4>{{courses.title}}</h4>
   ID: {{courses.nid}}
   <br>
-  <a routerLink="/detail-kurs/{{ courses.nid }}">Link zum Kurs</a>
+  <a mat-stroked-button routerLink="/detail-kurs/{{ courses.nid }}">Link zum Kurs</a>
 </div>

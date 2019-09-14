@@ -8,14 +8,14 @@
 .menubutton1 {
   border-radius: 5px;
   margin: 2em;
-  margin-left: 7em;
+  margin-left: 4em;
 }
 .menubutton {
   border-radius: 5px;
   margin: 2em;
 }
 
-.menubutton:hover, .menubutton1:hover{
+.menubutton:hover, .menubutton1:hover {
   background-color: darkblue;
 }
 
@@ -52,5 +52,3 @@
    position: sticky;
    top: 0;
  }
-
-

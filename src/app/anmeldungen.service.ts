@@ -1,5 +1,6 @@
 import {Injectable, OnInit} from '@angular/core';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -16,9 +17,7 @@ export class AnmeldungenService {
   public temp2;
   public index;
 
-
   constructor() { }
-
 
   setAnmeldungen() {
     this.temp1 = JSON.parse(localStorage.getItem('liste')) || [];
@@ -53,14 +52,11 @@ export class AnmeldungenService {
     const zuloeschen4 = loeschauswahl4;
     const neueliste4 = angemeldet4.replace(zuloeschen4, '');
     localStorage.setItem('liste', neueliste4);
-
   }
 
   getAnmeldungen() {
     return [
       JSON.parse(localStorage.getItem('liste'))
     ];
-
   }
-
 }

@@ -22,12 +22,12 @@ const routes: Routes = [
   {path: 'overview-kurseamwochentag/:id', component: OverviewKurseamwochentagComponent},
   {path: 'anmeldungsliste', component: AnmeldungslisteComponent},
   {path: 'impressum', component: ImpressumComponent}
-
 ];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule {
-}
+
+export class AppRoutingModule { }

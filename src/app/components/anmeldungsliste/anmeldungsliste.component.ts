@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import {AnmeldungenService} from '../../anmeldungen.service';
 
+
 @Component({
   selector: 'app-anmeldungsliste',
   templateUrl: './anmeldungsliste.component.html',
   styleUrls: ['./anmeldungsliste.component.scss']
 })
+
 export class AnmeldungslisteComponent implements OnInit {
 
   public anmeldungen = [];
@@ -27,12 +29,3 @@ export class AnmeldungslisteComponent implements OnInit {
     window.location.reload();
   }
 }
-
-/*ngOnInit() {
-  this.getAnmeldungen();
-}
-
-getAnmeldungen() {
-  this.anmeldungenService.getAnmeldungen().subscribe(anmeldungen => (this.anmeldungen = anmeldungen));
-
-}*/

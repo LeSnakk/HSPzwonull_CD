@@ -22,10 +22,10 @@
   Ort: {{courseDate.field_ort}}
   <br>
   <div *ngIf="(data === null) || (data.indexOf('&#34;Name&#34;:&#34;' + courseData[0].title + '&#34;,&#34;ID&#34;:&#34;' + courseData[0].nid + '&#34;,&#34;Tag&#34;:&#34;' + courseDate.field_wochentag + '&#34;,&#34;Start&#34;:&#34;' + courseDate.field_uhrzeit_beginn + '&#34;,&#34;Ende&#34;:&#34;' + courseDate.field_uhrzeit_ende + '&#34;,&#34;Ort&#34;:&#34;' + courseDate.field_ort + '&#34;') === -1)">
-  <button mat-raised-button matTooltip="Zu diesem Kurs anmelden" matTooltipPosition="after" color="primary" (click)="anmelden($event, courseDate.field_wochentag, courseDate.field_uhrzeit_beginn, courseDate.field_uhrzeit_ende, courseDate.field_ort)">Anmelden</button>
+  <button class="login" mat-raised-button matTooltip="Zu diesem Kurs anmelden" matTooltipPosition="after" color="primary" (click)="anmelden($event, courseDate.field_wochentag, courseDate.field_uhrzeit_beginn, courseDate.field_uhrzeit_ende, courseDate.field_ort)">Anmelden</button>
   </div>
   <div *ngIf="(data !== null) && (data.indexOf('&#34;Name&#34;:&#34;' + courseData[0].title + '&#34;,&#34;ID&#34;:&#34;' + courseData[0].nid + '&#34;,&#34;Tag&#34;:&#34;' + courseDate.field_wochentag + '&#34;,&#34;Start&#34;:&#34;' + courseDate.field_uhrzeit_beginn + '&#34;,&#34;Ende&#34;:&#34;' + courseDate.field_uhrzeit_ende + '&#34;,&#34;Ort&#34;:&#34;' + courseDate.field_ort + '&#34;') !== -1)">
-    <button mat-raised-button matTooltip="Von diesem Kurs abmelden" matTooltipPosition="after" color ="warn" (click)="abmelden($event, courseDate.field_wochentag, courseDate.field_uhrzeit_beginn, courseDate.field_uhrzeit_ende, courseDate.field_ort)">Abmelden</button>
+    <button class="logout" mat-raised-button matTooltip="Von diesem Kurs abmelden" matTooltipPosition="after" color ="warn" (click)="abmelden($event, courseDate.field_wochentag, courseDate.field_uhrzeit_beginn, courseDate.field_uhrzeit_ende, courseDate.field_ort)">Abmelden</button>
   </div>
     {{anmeldungen}}
 </div>

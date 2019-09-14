@@ -2,11 +2,13 @@ import {Component, OnInit} from '@angular/core';
 import {AnmeldungenService} from './anmeldungen.service';
 import {Title} from '@angular/platform-browser';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
+
 export class AppComponent implements OnInit {
 
   title = 'HSPzwonull';
@@ -20,6 +22,5 @@ export class AppComponent implements OnInit {
     if (localStorage.getItem('liste') === null) {
       localStorage.setItem('liste', JSON.stringify(this.arr));
     }
-
   }
 }

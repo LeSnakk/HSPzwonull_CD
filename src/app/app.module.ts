@@ -5,11 +5,9 @@ import {MatButtonModule, MatToolbarModule} from '@angular/material';
 import {NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatTooltipModule} from '@angular/material/tooltip';
-
-
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {HttpClientModule} from "@angular/common/http";
+import {HttpClientModule} from '@angular/common/http';
 import {DetailNewsComponent} from './components/detail-news/detail-news.component';
 import {DetailTopkursComponent} from './components/detail-topkurs/detail-topkurs.component';
 import {DetailKursComponent} from './components/detail-kurs/detail-kurs.component';
@@ -24,7 +22,9 @@ import { AnmeldungslisteComponent } from './components/anmeldungsliste/anmeldung
 import {MatCheckboxModule} from '@angular/material';
 import { ImpressumComponent } from './impressum/impressum.component';
 
+
 @NgModule({
+
   declarations: [
     AppComponent,
     DetailNewsComponent,
@@ -37,8 +37,8 @@ import { ImpressumComponent } from './impressum/impressum.component';
     HomeComponent,
     AnmeldungslisteComponent,
     ImpressumComponent
-
   ],
+
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -52,9 +52,10 @@ import { ImpressumComponent } from './impressum/impressum.component';
     MatTabsModule,
     MatTooltipModule
   ],
+
   schemas: [ NO_ERRORS_SCHEMA ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule {
-}
+
+export class AppModule { }

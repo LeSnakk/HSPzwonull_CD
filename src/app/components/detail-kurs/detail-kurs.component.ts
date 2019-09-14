@@ -4,7 +4,6 @@ import {HttpClient} from '@angular/common/http';
 import {AnmeldungenService} from '../../anmeldungen.service';
 
 
-
 @Component({
   selector: 'app-detail-kurs',
   templateUrl: './detail-kurs.component.html',
@@ -20,8 +19,6 @@ export class DetailKursComponent implements OnInit {
 
   public anmeldungen;
   public title;
-
-
 
 
   constructor(private route: ActivatedRoute, private http: HttpClient, private anmeldungenService: AnmeldungenService) { }
@@ -40,11 +37,6 @@ export class DetailKursComponent implements OnInit {
     }
   }
 
-
-  /*abmelden() {
-  localStorage.removeItem('liste');
-  }*/
-
   abmelden(event, Tag, Startzeit, Endzeit, Ort) {
     this.anmeldungenService.tempKursName = this.courseData[0].title;
     this.anmeldungenService.tempKursID = this.courseID;
@@ -57,7 +49,6 @@ export class DetailKursComponent implements OnInit {
       this.anmeldungenService.removeAnmeldungen();
       window.location.reload();
     }
-
   }
 
   ngOnInit() {
@@ -69,12 +60,7 @@ export class DetailKursComponent implements OnInit {
         this.courseData = data;
       });
     this.data = localStorage.getItem('liste');
-
-
-
-
   }
-
 }
 
 
